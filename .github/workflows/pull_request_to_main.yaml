@@ -31,11 +31,12 @@ jobs:
         run: flutter analyze
       - name: Test
         run: flutter test
-
+      - name: Build
+        run: flutter build web
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
           publish_branch: gh-pages
+          publish_dir: ./build/web
