@@ -32,7 +32,7 @@ jobs:
       - name: Test
         run: flutter test
       - name: Build
-        run: flutter build web
+        run: flutter build web --web-renderer html --base-href /github_page_test/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
