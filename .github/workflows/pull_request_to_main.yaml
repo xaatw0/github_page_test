@@ -1,13 +1,12 @@
-name: github pages
-
+name: analyze and test code on linux for main branch
 on:
   pull_request:
     branches:
       - main
-
 jobs:
-  build-deploy:
-    runs-on: ubuntu-18.04
+  test:
+    name: check flutter source
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
